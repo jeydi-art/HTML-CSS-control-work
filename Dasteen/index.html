@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>min-width: auto vs 0</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #f0f0f0;
+            padding: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 600px;
+            background: #fff;
+            border: 2px solid #ccc;
+            padding: 20px;
+        }
+
+        .col {
+            background: #cce5ff;
+            padding: 10px;
+            border: 2px solid #007bff;
+        }
+
+        .auto .col:nth-child(2) {
+            /* без min-width: 0 — колонка не сжимается */
+            min-width: auto;
+        }
+
+        .zero .col:nth-child(2) {
+            /* позволяет сжиматься и переносить текст */
+            min-width: 0;
+            overflow-wrap: anywhere;
+        }
+    </style>
+</head>
+<body>
+
+<h2>🚫 Без <code>min-width: 0</code> — сетка распухает</h2>
+<div class="grid auto">
+    <div class="col">Короткий текст</div>
+    <div class="col">ОЧЕНЬДЛИННОЕСЛОВОБЕЗПРОБЕЛОВ</div>
+</div>
+
+<h2>✅ С <code>min-width: 0</code> — сетка не ломается</h2>
+<div class="grid zero">
+    <div class="col">Короткий текст</div>
+    <div class="col">ОЧЕНЬДЛИННОЕСЛОВОБЕЗПРОБЕЛОВ</div>
+</div>
+
+</body>
+</html>

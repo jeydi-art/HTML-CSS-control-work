@@ -1,0 +1,615 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+/* фон на 100% окна */
+body {
+    background: #000; /* черный фон */
+    display: flex;
+    justify-content: center; /* центрируем сам сайт */
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: #2B2C34;
+    height: 100%;
+
+}
+
+/* сам сайт фиксированной ширины 1440px */
+.site {
+    width: 1440px;
+    background: #EFF0F3; /* основной светлый фон сайта */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* общий контейнер для контента (1250px) */
+.container {
+    width: 1250px;
+    margin: 0 auto;
+}
+
+/* ===== HEADER ===== */
+header {
+    background: #F2F4F8;
+    box-shadow: 4px 6px 13px rgba(215,215,215,0.25);
+
+    /*box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);*/
+    position: fixed;
+    top: 0;
+    width: 1440px; /* тянется на всю ширину сайта */
+    z-index: 100;
+
+}
+
+header .container {
+    height: 86px;
+    width: 1250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Лого слева, навигация справа */
+}
+
+/* логотип слева */
+.logo {
+    font-weight: 600;
+    font-size: 36px;
+    color: #001858;
+}
+.logo .dot {
+    color: #6246EA;
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 2px;
+}
+
+/* меню справа */
+header nav {
+    margin-left: auto;
+}
+header nav ul {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+header nav a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 20px;
+    color: #1f2937;
+
+}
+
+/* пункт Search */
+.nav-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #1f2937;
+    font-weight: 700;
+    font-size: 20px;
+    position: relative;
+}
+.nav-search img {
+    width: 17px;
+    height: 17px;
+}
+
+.nav-search input {
+    width: 69px;                 /* ширина при неактивном состоянии */
+    font-size: 20px;
+    color: #1f2937;
+    background: transparent;     /* без фона */
+    border: none;                /* без рамки */
+    outline: none;               /* без синей обводки при клике */
+    transition: width 0.3s ease; /* плавное расширение */
+    cursor: text;
+}
+.nav-search input:focus {
+    width: 150px; /* ширина при фокусе */
+}
+
+/* placeholder — тот же размер */
+.nav-search input::placeholder {
+    color: #1f2937;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* при фокусе (кликаем на поле) */
+.nav-search input:focus::placeholder{
+    color: transparent; /* скрываем текст */
+}
+
+/*!* кнопка справа *!*/
+.header-button{
+    display: inline-flex;               /*чтобы текст и img в ссылке выстраивались в одну строку*/
+    align-items: center;
+    gap: 10px;
+    /*width: 213px;*/
+    /*height: 44px;*/
+    padding: 10px 17px;
+    border-radius: 4px;
+    background: #6246EA;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    margin-left: 50px;
+}
+
+.header-button img {
+    width: 24px;
+    height: 24px;
+}
+
+/* чтобы контент не залезал под фиксированную шапку */
+main {
+    padding-top: 86px;
+    background: #EFF0F3;
+}
+/*/-----------------------------------------------------*/
+.hero{
+    height: 900px;
+    padding: 250px 0 263px 0;
+}
+.learn-coding{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*height: 100%;*/
+
+}
+
+.learn-coding div:nth-child(1){
+    width: 650px;
+}
+.learn-coding h1{
+    width: 590px;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 100%;          /* фигма: 100% */
+    letter-spacing: 0;
+    text-transform: capitalize; /* фигма: capitalize */
+    margin-bottom: 33px;         /* отступ до p: 33px */
+
+}
+.learn-coding p{
+    width: 670px;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    line-height: 100%;          /* фигма: 100% */
+    letter-spacing: 0;
+    color: #9A9494;
+    padding-left: 12px;          /* отступ текста от линии */
+    border-left: 3px solid #2B2C34; /* вертикальная черта */
+}
+.learn-coding__subscribe{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.learn-coding__input{
+    width: 444px;
+    height: 67px;
+    padding: 21px 25px;
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #374151;
+    outline: none;
+}
+
+.learn-coding__input::placeholder {
+    color: #9ca3af;
+}
+
+.learn-coding__btn {
+    height: 67px;
+    padding: 20px 23px 19px;
+    background: #6246EA;
+    color: #ffffff;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* правая колонка (картинка) */
+.learn-coding > div:nth-child(2){
+    width: 470px;
+    height: 387px;
+    display: flex;
+    justify-content: flex-end;  /* прижать картинку вправо */
+    align-items: flex-start;
+}
+
+
+/*------------------Browse The Category-----------------------------*/
+.categories{
+    background: #EFF0F3;
+    /*padding: 62px 0 50px;*/
+    height: 500px;
+}
+.categories__nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.categories__nav h2{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0;
+}
+
+/* ссылка справа — ЕДИНАЯ для See All Category и See All Articles  */
+.categories__nav a{
+    display: inline-flex;                   /*чтобы текст и img в ссылке выстраивались в одну строку*/
+    align-items: center;
+    font-weight: 700;
+    font-size: 20px;
+    gap: 12px;
+    text-transform: capitalize;
+}
+
+/* отступы именно для категории: top 62, bottom 50 */
+.categories .categories__nav{
+    padding-top: 62px;
+    padding-bottom: 50px;
+}
+
+.categories__arrow{
+    width: 6px;
+    height: 14px;
+}
+
+.category-cards{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.category-card{
+    width:220px;
+    height:280px;
+    background: #FFFFFE;
+    border-radius:8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 65px 0 95px 30px;
+    gap: 37px;
+
+}
+.category-card img{
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+
+.category-card p{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 100%;
+
+}
+
+.category-card:hover {
+    background: #6246EA; /* фиолетовый фон при наведении */
+    transition: all 0.3s ease; /* плавный переход */
+}
+
+/* фиолетовая карта */
+.category-card--accent{
+    background:#6246EA;
+    color: #FFFFFE;
+}
+
+.category-card:hover p{
+    color: #fff;
+}
+
+/*/---------------------Article-------------------------*/
+
+/* сама секция — белая на всю ширину .site (1440px) */
+.featured-article {
+    background: #ffffff;
+    padding: 80px 0;
+}
+
+/* Featured Article: сверху 80px, снизу 30px */
+.featured-article .categories__nav {
+    margin-bottom: 30px;
+}
+
+/* ===== Сетка карточек ===== !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+.articles__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    width: 1250px;
+    margin: 0 auto;
+}
+
+/* ===== Карточка ===== */
+.article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:425px;
+    width:300px;
+    background:#fff;
+    border-radius:12px;
+    padding: 20px 0 20px;
+}
+.shadow{
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Ховер-эффект */
+.article:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Картинка */
+.article > img {
+    width: 260px;
+    height: 198px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Заголовок */
+.article > h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2B2C34;
+    line-height: 1.3;
+    width:260px;
+    margin-bottom: 16px;        /* перед автором */
+}
+
+/* Автор */
+.article-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 260px;
+    margin-top: auto;       /* <-- отправляем в самый низ */
+}
+
+.article-author > img {
+    width: 57px;
+    height: 57px;
+    border-radius: 50%;
+}
+.article-author > div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+
+}
+.article-author p{
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.article-author span{
+    font-weight: 400;
+    font-size: 14px;
+    color: #9A9494;
+}
+
+.more-article__btn {
+    display: block;               /* кнопка теперь сама по себе блочный элемент */
+    width: 165px;
+    height: 64px;
+    margin: 80px auto 0;      /* центрируем по горизонтали, сверху и снизу по 80px */
+    background: #6246EA;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 20px 23px 19px;
+    gap: 10px;
+    text-transform: capitalize;
+}
+
+/* ===== SUBSCRIBE SECTION ===== */
+.subscribe {
+    background: #F2F4F8;
+    width: 1440px;
+    height: 453px;
+    padding: 58px 372px; /* по макету */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.subscribe__icon {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 30px;
+}
+
+.subscribe__content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.subscribe__content p {
+    font-size: 20px;
+    font-weight: 400;
+    color: #C0C0C0;
+    margin-bottom: 40px;
+}
+
+.subscribe__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* поле ввода */
+.subscribe__form input {
+    /*width: 444px;*/
+    height: 67px;
+    padding: 21px 200px 21px 25px;
+    background: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #C0C0C0;
+    outline: none;
+}
+
+.subscribe__form input::placeholder {
+    color: #C0C0C0;
+}
+
+/* кнопка */
+.subscribe__btn {
+    background: #6246EA;
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    border: none;
+    border-radius: 8px;
+    height: 67px;
+    padding: 20px 23px 19px;
+    cursor: pointer;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #E4E5E9;
+    padding: 70px 0 26px; /* нижний паддинг даёт место под абсолютные элементы */
+}
+
+/* ВНЕШНЯЯ сетка: 2 колонки, слева фикс 284px, между ними 160px */
+.footer-grid{
+    display: grid;
+    grid-template-columns: 284px 1fr;  /* слева фикс ширина, справа остальное */
+    grid-template-areas:
+            "dasteen links";
+    column-gap: 95px;                  /* базовый gap справа между колонками */
+    align-items: start;
+}
+
+/* Левая колонка (логотип, описание, соцсети) */
+.dasteen {
+    grid-area: dasteen;
+}
+
+.dasteen .footer-logo {
+    width: 195px;
+    height: 45px;
+    display: block;
+}
+
+.dasteen p{
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+/* Соц-иконки: единый бокс 4 иконки по 30×30, общий блок 210px, gap 30 */
+.social{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 210px;
+    height: 30px;
+    margin-top: 20px;
+}
+.social li{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.social img{
+    width: 30px;
+    height: 30px;
+    display: block;
+    object-fit: contain;
+}
+.social svg{
+    width: auto;                            /*    * чтобы не растягивался в квадрат, пропорции сохранятся *!*!*/
+    display: block;
+    padding: 1px 0;
+}
+
+/* ПРАВАЯ часть: 4 колонки links area, gap 95px */
+.footer-links{
+    min-width: 0;
+    display: grid;
+    grid-area: links;
+    grid-template-columns: repeat(4, max-content);
+    column-gap: 95px;               /* между правыми колонками по 95 */
+    padding-left: 65px;                         /* ВАЖНО: чтобы между brand и первой колонкой было ровно 160px,
+                                                добавляем «добавочный» отступ слева 65px.
+                                                 Итого: 95 (column-gap) + 65 (padding-left) = 160 */
+}
+/* каждая колонка тоже может ужиматься и имеет «потолок» ширины */
+.footer-links > div{
+    min-width: 0;          /* ключ к ужатию внутри grid */
+    max-width: 159px;      /* необязательно; подгони, если нужно (220–280px) */
+}
+
+/* заголовки и ссылки ломаются даже без пробелов */
+.dasteen p, .footer-links h5, .footer-links a{
+    overflow-wrap: anywhere;  /* главный антираздувочный параметр */
+    word-break: break-word;   /* запасной вариант для старых движков */
+    hyphens: auto;            /* если подключишь авто-переносы — будет аккуратнее */
+}
+
+.footer-links h5{
+    margin-bottom: 25px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 100%;
+    text-transform: uppercase;
+}
+/* списки ссылок */
+
+.footer-links li {
+    margin-bottom: 16px;
+}
+
+.footer-links a {
+    font-size: 18px;
+    font-weight: 400;
+}
+.footer-links a:hover {
+    text-decoration: underline;             /* подчеркивание при наведении на ссылку */
+}
+
+/* разделитель и копирайт */
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background: #C0C0C0;
+    border: 0;
+    margin: 50px 0 26px; /* 50 вверх до линии, 26 вниз до копирайта */
+}
+.footer-copy {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+    margin-left: 0;
+}
+
+
+
